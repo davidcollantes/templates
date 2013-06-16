@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{Title}{block:SearchPage}: Search results for "{SearchQuery}"{/block:SearchPage}{block:PostSummary}: {PostSummary}{/block:PostSummary}{block:PreviousPage}{block:Pagination}: Page {CurrentPage}{/block:Pagination}{/block:PreviousPage}{block:TagPage}: {URLSafeTag}{/block:TagPage}</title>
+  <meta name="description" content="{MetaDescription}">
+  <link href="http://static.tumblr.com/v335647/Fk7mmm28q/s_style1.css" rel="stylesheet" type="text/css">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link rel="shortcut icon" href="{Favicon}">
+  <style type="text/css">{CustomCSS}</style>
+  <meta name="viewport" content="width=740">
+  <meta name="if:Hide Notecount" content="1">
+<style type="text/css">{CustomCSS}</style>
+</head>
+<body>
+  <div id="header">
+    <p><a rel="start up" title="{Title} home" href="/">{Title}</a> <span>is a {Description}</span></p>
+  </div>
+
+  <div class="postcontainer">
+  {block:Posts}
+    <div class="post">
+
+      {block:RebloggedFrom}
+        <div class="posticonquote">:</div>
+      {/block:RebloggedFrom}
+
+      {block:Answer}      
+        <div class="questioncontainer">
+        <div class="asker">{Asker}:</div> 
+        <div class="question"> {Question}</div>
+        <div class="answer">{Answer}</div>
+      {/block:Answer}
+
+      {block:Text}
+        {block:NewDayDate}<div class="date"><span>{DayOfMonthWithZero}</span> <div class="month">{Month} {Year}</div><br /></div>
+        {/block:NewDayDate}{block:SameDayDate}<br/>{/block:SameDayDate}
+          {block:Title}<a href="{Permalink}"><h3>{Title}</h3></a>{/block:Title}
+          {Body}
+      {/block:Text}
+
+      <div class="photo-post">
+        {block:Photo}
+        <div class="photocaption">
+          {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">{LinkCloseTag}          
+          {block:Caption}
+            {Caption}
+          {/block:Caption}
+        </div>
+        {/block:Photo}
+      </div>
+
+      {block:Photoset}
+      <div class="photoset">{Photoset-500}</div>
+      <div class="photosetcaption">
+        {block:Caption}
+          {Caption}
+        {/block:Caption}
+      </div>
+      {/block:Photoset}
+
+      {block:Quote}
+        {block:NewDayDate}
+        <div class="date"><span>{DayOfMonthWithZero}</span> <div class="month">{Month} {Year}</div></div>
+        {/block:NewDayDate}
+        <p class="quote">{Quote}</p>
+        <p class="quotesource">
+          {block:Source}
+            {Source}
+          {/block:Source}
+        </p>
+      {/block:Quote}
+
+      {block:Link}
+        {block:NewDayDate}
+        <div class="date"><span>{DayOfMonthWithZero}</span> <div class="month">{Month} {Year}</div></div>
+        {/block:NewDayDate}
+        <div class="linktitle"><a href='{URL}' {Target}>{Name}</a></div>
+        {block:Description}
+          <div style="text-align:center">{Description}</div>
+        {/block:Description}
+      {/block:Link}
+
+      {block:Chat}
+        {block:NewDayDate}<div class="date"><span>{DayOfMonthWithZero}</span> <div class="month">{Month} {Year}</div><br /></div>
+        {/block:NewDayDate}
+        <table cellpadding="0" cellspacing="0px" width="100%" border="0" class="chatpost">
+          {block:Lines}<tr class="{Alt}">{block:Label}<td class="label">{Label}</td>{/block:Label}<td class="lines">{Line}</td></tr>{/block:Lines}
+        </table>
+      {/block:Chat}
+
+      {block:Audio}
+      <div class="albumcover">
+        {block:AlbumArt}<img src="{AlbumArtURL}" />{/block:AlbumArt}
+      </div>
+      <div id="trackinfo">
+        <div class="artist">
+          {block:Artist}
+            {Artist}
+          {/block:Artist}
+        </div><!--artist -->
+        <div class="trackname">
+          {block:TrackName}
+            {TrackName}
+          {/block:TrackName}
+        </div><!--trackname -->
+          <div class="audioplayer">{AudioPlayerWhite}</div>
+          {block:Caption}<p>{Caption}</p>{/block:Caption}
+        </div>
+      {/block:Audio}
+
+      {block:Video}
+      <div class="videos">{Video-700}</div>
+      <div class="videocaption">
+        {block:Caption}{Caption}{/block:Caption}
+      </div>
+      {/block:Video}
+      <div class="postinfo">
+        <div class="tags">
+          {block:HasTags}
+            {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+          {/block:HasTags}
+        </div>
+        <li class="notes">&nbsp;<a href="{Permalink}">{block:Photo}{block:Exif}{block:Camera}{Camera}{/block:Camera},&nbsp;{block:Aperture}{Aperture}{/block:Aperture},&nbsp;{block:Exposure}{Exposure}{/block:Exposure},&nbsp;{block:FocalLength}{FocalLength}{/block:FocalLength}&nbsp;|&nbsp;{/block:Exif}{block:NewDayDate}{DayOfMonth} {ShortMonth} {ShortYear}{/block:NewDayDate}{/block:Photo}{block:Panorama}{block:NewDayDate}{DayOfMonth} {ShortMonth} {ShortYear}{/block:NewDayDate}{/block:Panorama}{block:Photoset}{block:NewDayDate}{DayOfMonth} {ShortMonth} {ShortYear}{/block:NewDayDate}{/block:Photoset}{block:Answer}{block:NewDayDate}{DayOfMonth} {ShortMonth} {ShortYear}{/block:NewDayDate}{/block:Answer}{block:Audio}{block:NewDayDate}{DayOfMonth} {ShortMonth} {ShortYear}{/block:NewDayDate}{/block:Audio}&nbsp;{24HourWithZero}:{Minutes}</a></li>
+      </div><!-- /postinfo -->
+
+    </div><!-- /post -->
+
+  {/block:Posts}
+
+  <div class="footer">
+    {block:NextPage}<a class="left" href='{NextPage}'>Older <span>Posts</span></a>{/block:NextPage}
+    {block:PreviousPage}<a class="right" href="{PreviousPage}">Newer <span>Posts</span></a>{/block:PreviousPage}
+
+    {block:PermalinkPagination}
+    {block:NextPost}<a class="left" href="{PreviousPost}">Older <span>Post</span></a>{/block:NextPost}
+    {block:PreviousPost}<a class="right" href="{NextPost}">Newer <span>Post</span></a>{/block:PreviousPost}
+    {/block:PermalinkPagination}
+  </div><!-- /footer -->
+</div> <!-- /postcontainer -->
+<br class="clear">
+<script type="text/javascript">
+(function () {
+    var mjx = document.createElement('script');
+    mjx.type = 'text/javascript';
+    mjx.src = 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML';
+    mjx.async = true;
+    var k = document.getElementsByTagName('script')[0];
+    k.parentNode.insertBefore(mjx, k);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- DEFAULT COLORS -->
+      <meta name="color:Content Background" content="#ffffff"/>
+      <meta name="color:Content Text" content="#000"/>
+      <meta name="color:Link Text" content="#333333"/>
+      <meta name="color:Link Background" content="#ccff66"/>
+      <meta name="color:Link Hover Text" content="#808000"/>
+      <meta name="color:Link Hover Background" content="#ffffff"/>
+      <meta name="color:Header Text" content="#666666"/>
+      <meta name="color:Description Text" content="#666666"/>
+      <meta name="color:Image Background" content="#eeeeee"/>
+      <meta name="color:Image Border" content="#cccccc"/>
+      <meta name="color:Date" content="#333333"/>
+      <meta name="color:Date Border" content="#999999"/>
+      <meta name="color:Quote" content="#666666"/>
+      <meta name="color:Notes Border" content="#999999"/>
+      <meta name="color:Table Row Hover" content="#dddddd"/>
+      <!-- END DEFAULT COLORS -->
+
+    <meta charset="UTF-8" />
+    <title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{Favicon}" />
+    <link rel="alternate feed" type="application/rss+xml" title="RSS" href="{RSS}" />
+    <meta name="viewport" content="width=775" /> <!-- iPhone -->
+    <meta name="description" content="{Description}" />
+
+    <!-- Robot Instructions -->
+    <meta name="revisit-after" content="1 days" />
+    <meta name="robots" content="index, follow, snippet, archive, noimageindex, noimageclick" />
+
+    <style type="text/css">
+      * {
+        vertical-align:baseline;
+        }
+      body, html {
+        background: {color:Content Background};
+        margin:0;
+        padding:0;
+        border:0;
+        font: 100%/150% Georgia, Serif;
+        color: {color:Content Text};
+        }
+      pre, code, tt {
+        font: 68.75%/150% Monaco, 'Courier 10 Pitch', Consolas, 'Courier New', Monospace;
+        }
+      a {
+        color: {color:Link Text};
+        text-decoration: none;
+        padding: 1px 2px;
+        background: {color:Link Background};
+        }
+      a:hover {
+        color: {color:Link Hover Text};
+        background: {color:Link Hover Background};
+        }
+      h1, h2, h3, h4 {
+        color: {color:Header Text};
+        font-weight: normal!important;
+        margin-bottom:0;
+        }
+      .description {
+        color: {color:Description Text};
+        }
+      li, .commentary {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        }
+      .commentary {
+        display: block;
+        }
+      tr {
+        margin:0;
+        padding:0;
+        width:100%;
+        }
+      tr:hover {
+        background-color: {color:Table Row Hover};
+        }
+      th {
+        font-weight: bold !important;
+        padding: 5px;
+        vertical-align: top;
+        border-top: 1px {Table Row Hover} solid;
+        border-bottom: 1px {Table Row Hover} solid;
+        }
+      th, td {
+        font-size: 100%;
+        }
+      td {
+        text-align:left;
+        vertical-align:top;
+        padding:5px;
+        border-bottom: 1px {Table Row Hover} solid;
+        }
+      table {
+        clear: both;
+        border-collapse: collapse;
+        border-spacing: 0;
+        text-align: left;
+        margin-bottom: 1.0em;
+        width: 100%;
+        }
+      .post img {
+        background: {color:Image Background} !important;
+        border: 1px solid {color:Image Border};
+        padding: 5px;
+        margin: 0px;
+        display: block;
+        }
+      .post img a {
+        text-decoration: none !important;
+        background: {color:Content Background} !important;
+        margin: 0;
+        display: block;
+        }
+      .photo a, .disqus a {
+        text-decoration: none !important;
+        background: {color:Content Background} !important;
+        }
+      .header {
+        margin-bottom: 20px;
+        }
+      .wrapper {
+        width: 520px;
+        margin: 10px auto;
+        }
+      .main {
+        margin: 50px 0;
+        }
+      .datetime {
+        font-size: 75%;
+        line-height: 150%;
+        color: {color:Date};
+        position:relative;
+        float:left;
+        margin-left:-250px;
+        padding-right: 25px;
+        border-right: 1px solid {color:Date Border};
+        width: 200px;
+        text-align: right;
+        clear: both;
+        }
+      .navleft, .navright, .navcenter, input, select, textarea {
+        font-size: 87.5%;
+        }
+      .navleft {
+        float: left;
+        position: relative;
+        }
+      .navright {
+        float: right;
+        position: relative;
+        }
+      .navcenter, .credits {
+        text-align:center;
+        width: 500px;
+        }
+      .credits { font-size: 75% }
+      .post {
+        padding-bottom: 30px;
+        }
+      .short_quote, .medium_quote, .long_quote {
+        margin: 0;
+        padding: 0;
+        color: {color:Quote};
+        font-size:120%;
+        }
+      a .notes {
+        text-decoration: none !important;
+        background: none;
+        }
+      .notes a {
+        text-decoration: none !important;
+        background: none;
+        }
+      img .notes, .notes img  {
+        margin: 0;
+        padding: 0;
+        border: 1px solid {color:Notes Border};
+        vertical align: middle;
+        }
+      .disqus {
+        font: 100%/150% Georgia, Serif !important;
+        color:{color:Content Text} !important;
+        }
+      {CustomCSS}
+    </style>
+    {block:PermalinkPage}<link rel="canonical" href="{Permalink}" />{/block:PermalinkPage}
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <h1>{Title}</h1>
+        <p class="description">{Description}</p>
+      </div>
+      <div class="main">
+
+        {block:SearchPage}
+        <div class="post">
+          <div class="datetime">
+            {SearchResultCount} result(s)<br />
+            <a rel="start" href="/">home</a>
+          </div>
+          <p>searched for <em>{SearchQuery}</em></p>
+        </div>
+        {/block:SearchPage}
+        {block:TagPage}
+        <div class="post">
+          <div class="datetime">
+          <a rel="start" href="/">home</a><br />
+          </div>
+            <p>Posts tagged <em>{Tag}</em></p>
+          </div>
+        {/block:TagPage}
+        {block:Posts}
+        <div class="post">
+          <div class="datetime">
+            {TimeAgo}<br />
+            {block:HasTags}
+            {block:Tags}
+             <a href="{TagURL}">{Tag}</a><br />
+            {/block:Tags}
+            {/block:HasTags}
+            {block:Pagination}
+            <a rel="archives"  id="{PostID}" href="{Permalink}">{NoteCountWithLabel}</a><br />
+            {/block:Pagination}
+            {block:SearchPage}
+            <a rel="archives"  id="{PostID}" href="{Permalink}">{NoteCountWithLabel}</a><br />
+            {/block:SearchPage}
+            {block:PermalinkPage}
+            <a rel="start" href="/">home</a><br />
+            {/block:PermalinkPage}
+            {block:RebloggedFrom}reblogged from <a href="{ReblogParentURL}">{ReblogRootName}</a><br />{/block:RebloggedFrom}
+          </div>
+        {block:Regular}
+          {block:Title}<h2>{Title}</h2>{/block:Title}
+          {Body}
+        {/block:Regular}
+
+        {block:Photo}
+          <p><span class="photo">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" title="{PhotoAlt}">{LinkCloseTag}</span></p>
+          <div class="commentary">{Caption}</div>
+        {/block:Photo}
+
+        {block:Quote}
+          <p><span class="{Length}_quote">{Quote}</span></p>
+          {block:Source}<p>&mdash;&nbsp;{Source}</p>{/block:Source}
+        {/block:Quote}
+
+        {block:Video}
+          <p>{Video-500}</p>
+          <div class="commentary">{Caption}</div>
+        {/block:Video}
+
+        {block:Audio}
+          <p>{AudioPlayerGrey}</p>
+          <div class="commentary">{Caption}</div>
+        {/block:Audio}
+
+        {block:Link}
+          <h3><a href="{URL}" {Target}>{Name}</a>&nbsp;&rsaquo;</h3>
+          {block:Description}<p>{Description}</p>{/block:Description}
+        {/block:Link}
+
+        {block:Conversation}
+          {block:Title}<h2>{Title}</h2>{/block:Title}
+          <div class="commentary">
+          {block:Lines}
+          {block:Label}<strong>{Label}</strong>{/block:Label} {Line}<br />
+          {/block:Lines}
+          </div>
+        {/block:Conversation}
+        </div>
+        {/block:Posts}
+
+        {block:PermalinkPage}
+    <!-- Insert Ad code snippet. -->
+
+
+    <!-- End Ad. code snippet. -->
+        {block:PostNotes}
+        <div class="post">
+          <h3>Notes</h3>
+          <div class="commentary">{PostNotes}</div>
+        </div>
+        {/block:PostNotes}
+        <div class="post disqus">
+    <!-- Insert External comment (say, Disqus, Intense Debate, or others) code block below this line. -->
+
+
+    <!-- End of External comment code block. -->
+        </div>
+        {/block:PermalinkPage}
+
+
+        {block:Pagination}
+        {block:NextPage}
+        <div class="navleft">
+          &larr;&nbsp;<a rel="next" href="{NextPage}">Older</a>
+        </div>
+        {/block:NextPage}
+        {block:PreviousPage}
+        <div class="navright">
+          <a rel="previous" href="{PreviousPage}">Newer</a>&nbsp;&rarr;
+        </div>
+        {/block:PreviousPage}
+        <div class="navcenter">
+          <span class="long_quote">{CurrentPage}.</span>
+        </div>
+        {/block:Pagination}
+        {block:PermalinkPagination}
+        {block:NextPost}
+        <div class="navleft">
+          &larr;&nbsp;<a rel="next" href="{NextPost}">Older</a>
+        </div>
+        {/block:NextPost}
+        {block:PreviousPost}
+        <div class="navright">
+          <a rel="previous" href="{PreviousPost}">Newer</a>&nbsp;&rarr;
+        </div>
+        {/block:PreviousPost}
+        {/block:PermalinkPagination}
+
+      </div>
+      <div class="post">
+        <div class="navcenter">
+          <form action="/search" method="get">
+            <a rel="first" href="/">home</a>&nbsp;&nbsp;<a rel="up archives" href="/archive/">archive</a>&nbsp;&nbsp;<a href="/mobile">mobile</a>&nbsp;&nbsp;<a href="{RSS}">rss</a>&nbsp;&nbsp;<input type="text" name="q" value="{SearchQuery}"/>&nbsp;&nbsp;<input type="submit" value="search"/>
+          </form>
+        </div>
+      </div>
+      <div class="post">
+        <div class="credits">
+          Themed by <a href="http://langer.tumblr.com">langer</a>, hashed by <a href="http://github.com/ckunte/">ckunte</a>, and powered by <a href="http://www.tumblr.com">Tumblr</a>.
+        </div>
+      </div>
+    </div>
+
+    <!-- Insert statistics tracking script below this line. -->
+
+    <!-- End of tracking script. -->
+  </body>
+</html>

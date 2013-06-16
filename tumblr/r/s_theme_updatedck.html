@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{Title}{block:SearchPage}: Search results for "{SearchQuery}"{/block:SearchPage}{block:PostSummary}: {PostSummary}{/block:PostSummary}{block:PreviousPage}{block:Pagination}: Page {CurrentPage}{/block:Pagination}{/block:PreviousPage}{block:TagPage}: {URLSafeTag}{/block:TagPage}</title>
+  <meta name="description" content="{MetaDescription}">
+  <!-- <link href="http://static.tumblr.com/v335647/Fk7mmm28q/s_style1.css" rel="stylesheet" type="text/css"> -->
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link rel="shortcut icon" href="{Favicon}">
+  <style type="text/css">{CustomCSS}</style>
+  <meta name="viewport" content="width=740">
+  <meta name="if:Hide Notecount" content="1">
+    <style type="text/css">
+/*
+    http://static.tumblr.com/v335647/Fk7mmm28q/s_style1.css
+*/
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,900italic);
+@import url(http://fonts.googleapis.com/css?family=BenchNine:400,700);
+@import url(http://fonts.googleapis.com/css?family=ABeeZee);
+@import url(http://fonts.googleapis.com/css?family=Chau+Philomene+One:400,400italic);
+
+sup {
+  font:11px/11px Lato, Helvetica
+}
+
+.credits {
+  font:11px/11px Lato, Helvetica;
+  margin-top:3px
+}
+
+del {
+  color:#ccc
+}
+
+b,strong, h4 {
+  text-transform:lowercase;
+  font-variant:small-caps;
+  font-size:120%;
+  letter-spacing:1px
+}
+
+h2 {
+  font-family:Lato, Helvetica;
+  color:#928c86;
+  font-weight:600;
+  font-size:12px;
+  line-height:20px;
+  text-transform:uppercase;
+  margin-bottom:2px;
+  margin-top:10px
+}
+
+body {
+  font-size:1.4em;
+  line-height:140%;
+  color:rgba(0,0,0,0.8);
+  background:url(http://static.tumblr.com/nlywmlg/WMvmbs8qa/bgpat42.jpg);
+  background-attachment:fixed;
+  height:100%;
+  padding-bottom:90px;
+  margin:0
+}
+
+a {
+  text-decoration:none;
+  color:rgba(0,0,0,0.8)
+}
+
+.title {
+  text-align:center;
+  margin:-22px auto 75px
+}
+
+h3 {
+  z-index:999;
+  position:relative;
+  line-height:45px;
+  margin-bottom:20px;
+  font-weight:700;
+  margin-top:-20px;
+  text-align:center;
+  color:#3a3435;
+  font-family:BenchNine, Helvetica;
+  text-transform:uppercase;
+  font-size:44px
+}
+
+#header {
+  margin-top:50px;
+  margin-bottom:30px;
+  height:50px;
+  text-align:center
+}
+
+#wrapper {
+  width:640px;
+  margin:0 auto
+}
+
+.postcontainer {
+  width:640px;
+  clear:both;
+  margin:0 auto
+}
+
+.post {
+  position:relative;
+  margin-top:0;
+  background:#fff;
+  color:000;
+  width:520px;
+  margin-bottom:70px;
+  font-family:ABeeZee, 'Helvetica Neue', Helvetica;
+  font-weight:300;
+  text-align:left;
+  padding:60px 60px 80px
+}
+
+.post:before {
+  content:"";
+  position:absolute;
+  bottom:4px;
+  left:10px;
+  width:96%;
+  height:90%;
+  z-index:-1
+}
+
+.post pre {
+  background-color:#eee;
+  font:normal 13px monospace;
+  overflow:auto;
+  margin:10px 0;
+    border-radius:3px;
+  padding:10px
+}
+
+.post p code {
+  vertical-align:middle;
+  background-color:#eee;
+  font:normal 13px monospace;
+    border-radius:2px;
+  overflow:auto;
+  padding:3px
+}
+
+hr,.footnotes hr {
+  width:180px;
+  border-color:#eee;
+  border-style:solid;
+  border-width:1px 0 0
+}
+
+hr {
+  margin:20px auto
+}
+
+.footnotes hr {
+  margin:20px 0
+}
+
+.post p,.post li,.post blockquote {
+  font-size:15px;
+  line-height:24px
+}
+
+.post a {
+  font-weight:400;
+  color:#090
+}
+
+.post blockquote {
+  padding-left:15px;
+  margin-left:0;
+  border-left:1px solid #ddd
+}
+
+.post img {
+  z-index:10;
+  position:relative
+}
+
+.post > p img {
+  background:transparent;
+    border-radius:2px;
+    border:0 transparent solid;
+    -webkit-box-shadow:rgba(0,0,0,0.7) 0 1px 2px;
+    -moz-box-shadow:rgba(0,0,0,0.7) 0 1px 2px;
+    max-width:520px;
+  display:block;
+  margin:0 auto;
+  padding:0
+}
+
+.post strong {
+  color:#3e3e3e;
+  font-weight:400
+}
+
+.photo-post img {
+  display:block;
+  clear:both;
+  width:640px;
+  position:relative;
+  padding-bottom:40px;
+  z-index:10;
+  margin:-60px 0 -20px -60px
+}
+
+.photoset {
+  display:block;
+  clear:both;
+  width:640px;
+  position:relative;
+  padding-bottom:35px;
+  margin:-50px 0 -20px -25px
+}
+
+.photoset iframe {
+  max-width:640px
+}
+
+.post .photosetcaption {
+  width:500px;
+  margin:0 auto -20px
+}
+
+.videos {
+  width:640px;
+  margin:-60px 0 30px -60px
+}
+
+.videos iframe,.videos embed,.videos object {
+  width:640px
+}
+
+.asker {
+  text-transform:uppercase;
+  text-align:center;
+  color:#aeaeae;
+  font-size:10px;
+  letter-spacing:4px;
+  font-weight:400
+}
+
+.question {
+  color:#3a3435;
+  text-transform:uppercase;
+  font-family:BenchNine, Helvetica;
+  font-size:33px;
+  font-weight:700;
+  line-height:1.1em;
+  display:block;
+  clear:both;
+  text-align:center
+}
+
+.questioncontainer {
+  margin-bottom:15px
+}
+
+.answer {
+  text-align:center
+}
+
+.postinfo {
+  position:absolute;
+  text-transform:uppercase;
+  bottom:0;
+  background:#fbf9f5;
+  left:0;
+  text-align:center;
+  width:630px;
+  padding-left:10px;
+  padding-bottom:6px
+}
+
+.postinfo:after {
+  content:"";
+  position:absolute;
+  top:-3px;
+  left:0;
+  /* 
+  background:url(http://static.tumblr.com/nlywmlg/2rZmbokv3/postinfo_top.png); 
+  background-repeat:repeat-x;
+  */
+  width:100%;
+  height:6px
+}
+
+.postinfo a {
+  float:left;
+  color:#dbd3c4;
+  font-weight:600;
+  font-size:9px;
+  font-family:Lato, 'Helvetica Neue', Helvetica;
+  letter-spacing:1px;
+  line-height:16px;
+  margin-right:10px;
+  padding:2px 6px
+}
+
+.tags a {
+  margin-top:10px;
+  margin-right:-7px;
+  position:relative
+}
+
+.tags a:after {
+  content:","
+}
+
+.tags a:last-child:after {
+  content:none
+}
+
+.tags a:last-child {
+  padding-right:10px;
+  border-right:2px dotted #ece4d5
+}
+
+li.notes {
+  list-style:none
+}
+
+li.notes a {
+  margin-left:10px;
+  float:left;
+  display:inline;
+  clear:none;
+  margin-top:10px;
+  padding-right:10px
+}
+
+.date {
+  text-transform:uppercase;
+  text-align:center;
+  font-size:10px;
+  letter-spacing:4px;
+  color:#aeaeae;
+  font-weight:400;
+  margin-bottom:20px
+}
+
+.month {
+  display:inline
+}
+
+.linktitle {
+  position:relative;
+  z-index:202;
+  text-align:center
+}
+
+.linktitle a {
+  background:#fff;
+  color:#3a3435;
+  text-transform:uppercase;
+  font-family:BenchNine, Helvetica;
+  font-size:33px;
+  margin-bottom:20px;
+  font-weight:700;
+  line-height:1.1em;
+  margin-top:-22px;
+  padding:0 15px
+}
+
+.linktitle:after {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:10px;
+  border-bottom:1px solid #f0f0f0;
+  top:5px;
+  left:0;
+  z-index:-1
+}
+
+p.quote {
+  text-align:left;
+  color:#3a3435;
+  font-family:BenchNine, Helvetica;
+  font-size:33px;
+  margin-bottom:20px;
+  font-weight:700;
+  line-height:1.1em;
+  margin-top:0;
+  z-index:999!important;
+  position:relative
+}
+
+.quotesource,.quotesource p {
+  float:none;
+  text-align:center!important;
+  margin:0 auto
+}
+
+.chatpost {
+  margin-top:0;
+  font-size:15px
+}
+
+.chatpost td {
+  margin:0
+}
+
+.chatpost td.label {
+  text-align:right;
+  border-right:1px solid #f0f0f0;
+  padding-right:10px;
+  font-weight:700;
+  font-family:BenchNine, Helvetica;
+  text-transform:uppercase;
+  font-size:20px;
+  color:#525252!important
+}
+
+.chatpost tr td {
+  margin:0;
+  padding:5px 5px 5px 10px
+}
+
+.chatpost tr.odd td {
+  border-bottom:1px solid #f0f0f0;
+  color:#a3a3a3
+}
+
+.chatpost tr.even td {
+  border-bottom:1px solid #f0f0f0;
+  color:#ccc
+}
+
+.chatpost tr:last-child td {
+  border-bottom:none
+}
+
+.audioplayer {
+  border:1px solid #ececec;
+  display:block;
+  clear:both;
+  padding:10px
+}
+
+.audioplayer * {
+  text-align:center;
+  width:100%;
+  height:60px
+}
+
+.albumcover {
+  display:inline;
+  float:left
+}
+
+.albumcover img {
+  display:inline-block;
+  max-width:80px;
+  margin-bottom:20px;
+  margin-left:40px
+}
+
+.artist {
+  font-weight:400;
+  display:block;
+  padding-left:170px;
+  margin-bottom:5px;
+  margin-top:10px;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:1px
+}
+
+.trackname {
+  font-weight:400;
+  display:block;
+  padding-left:170px;
+  color:#3a3435;
+  text-transform:uppercase;
+  font-family:BenchNine, Helvetica;
+  line-height:15px;
+  font-size:33px
+}
+
+.clear {
+  clear:both
+}
+
+ol.notes {
+  width:70%
+}
+
+ol.notes,ol.notes li {
+  list-style-type:none;
+  color:#413b39;
+  line-height:12px;
+  font-family:Lato, 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight:400;
+  font-size:12px
+}
+
+ol.notes li a {
+  color:#979797;
+  font-weight:500
+}
+
+ol.notes li.note {
+  padding:4px
+}
+
+ol.notes li.note img.avatar {
+  vertical-align:-6px;
+  margin-right:5px;
+  width:16px;
+  height:16px;
+  padding:2px 2px 2px 4px
+}
+
+ol.notes li.note blockquote a {
+  text-decoration:none;
+  color:#979797;
+  border-left:2px solid #454545;
+  margin-left:-30px;
+  padding-left:10px;
+  font-weight:400
+}
+
+.footer {
+  clear:both;
+  width:640px;
+  margin:-50px auto 0;
+  padding:0
+}
+
+.footer a {
+  text-align:center;
+  color:#3a3435;
+  font-family:Lato, 'Helvetica Neue', Helvetica, sans-serif;
+  text-transform:uppercase;
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:600
+}
+
+#header,#header a {
+  text-align:center;
+  color:#333;
+  font-family:Lato, 'Helvetica Neue', Helvetica, sans-serif;
+  text-transform:uppercase;
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:600
+}
+
+#header span,.footer a span {
+  font-weight:300
+}
+
+.footer a.left {
+  float:left
+}
+
+.footer a.right {
+  float:right
+}
+
+.pagecount {
+  margin-left:42%;
+  font-size:12px;
+  font-family:'Helvetica Neue', Helvetica, sans-serif;
+  font-weight:500;
+  color:rgba(0,0,0,0.3);
+  text-transform:uppercase;
+  letter-spacing:5px;
+  margin-top:57px
+}
+
+.pagecount span {
+  font-size:14px;
+  color:rgba(0,0,0,0.6);
+  vertical-align:-1px
+}
+
+.posticonquote {
+  color:#f4efe6;
+  z-index:1!important;
+  font-family:EntypoRegular, Helvetica, Arial;
+  font-size:320px;
+  position:absolute;
+  top:30px;
+  left:20px
+}
+
+.hidestatic {
+  display:none
+}
+
+.post .photocaption,.videocaption {
+  margin-bottom:-30px
+}
+li {margin-bottom:6px;}
+td.lines {color:#000!important}
+        {CustomCSS}
+    </style>
+</head>
+<body>
+  <div id="header">
+    <p><a rel="start up" title="{Title} home" href="/">{Title}</a> <span>is a {Description}</span></p>
+  </div>
+
+  <div class="postcontainer">
+  {block:Posts}
+    <div class="post">
+
+      {block:RebloggedFrom}
+        <div class="posticonquote">:</div>
+      {/block:RebloggedFrom}
+
+      {block:Answer}      
+        <div class="questioncontainer">
+        <div class="asker">{Asker}:</div> 
+        <div class="question"> {Question}</div>
+        <div class="answer">{Answer}</div>
+      {/block:Answer}
+
+      {block:Text}
+        {block:NewDayDate}<div class="date"><span>{DayOfMonthWithZero}</span> <div class="month">{Month} {Year}</div><br /></div>
+        {/block:NewDayDate}{block:SameDayDate}<br/>{/block:SameDayDate}
+          {block:Title}<a href="{Permalink}"><h3>{Title}</h3></a>{/block:Title}
+          {Body}
+      {/block:Text}
+
+      <div class="photo-post">
+        {block:Photo}
+        <div class="photocaption">
+          {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">{LinkCloseTag}          
+          {block:Caption}
+            {Caption}
+          {/block:Caption}
+        </div>
+        {/block:Photo}
+      </div>
+
+      {block:Photoset}
+      <div class="photoset">{Photoset-500}</div>
+      <div class="photosetcaption">
+        {block:Caption}
+          {Caption}
+        {/block:Caption}
+      </div>
+      {/block:Photoset}
+
+      {block:Quote}
+        {block:NewDayDate}
+        <div class="date"><span>{DayOfMonthWithZero}</span> <div class="month">{Month} {Year}</div></div>
+        {/block:NewDayDate}
+        <p class="quote">{Quote}</p>
+        <p class="quotesource">
+          {block:Source}
+            {Source}
+          {/block:Source}
+        </p>
+      {/block:Quote}
+
+      {block:Link}
+        {block:NewDayDate}
+        <div class="date"><span>{DayOfMonthWithZero}</span> <div class="month">{Month} {Year}</div></div>
+        {/block:NewDayDate}
+        <div class="linktitle"><a href="{URL}" {Target}>{Name}</a></div>
+        {block:Description}
+          <div>{Description}</div>
+        {/block:Description}
+      {/block:Link}
+
+      {block:Chat}
+        {block:NewDayDate}<div class="date"><span>{DayOfMonthWithZero}</span> <div class="month">{Month} {Year}</div><br /></div>
+        {/block:NewDayDate}
+        {block:Title}<a href="{Permalink}"><h3>{Title}</h3></a>{/block:Title}
+        <table cellpadding="0" cellspacing="0px" width="100%" border="0" class="chatpost">
+          {block:Lines}<tr class="{Alt}">{block:Label}<td class="label">{Label}</td>{/block:Label}<td class="lines">{Line}</td></tr>{/block:Lines}
+        </table>
+      {/block:Chat}
+
+      {block:Audio}
+      <div class="albumcover">
+        {block:AlbumArt}<img src="{AlbumArtURL}" />{/block:AlbumArt}
+      </div>
+      <div id="trackinfo">
+        <div class="artist">
+          {block:Artist}
+            {Artist}
+          {/block:Artist}
+        </div><!--artist -->
+        <div class="trackname">
+          {block:TrackName}
+            {TrackName}
+          {/block:TrackName}
+        </div><!--trackname -->
+          <div class="audioplayer">{AudioPlayerWhite}</div>
+          {block:Caption}<p>{Caption}</p>{/block:Caption}
+        </div>
+      {/block:Audio}
+
+      {block:Video}
+      <div class="videos">{Video-700}</div>
+      <div class="videocaption">
+        {block:Caption}{Caption}{/block:Caption}
+      </div>
+      {/block:Video}
+      <div class="postinfo">
+        <div class="tags">
+          {block:HasTags}
+            {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+          {/block:HasTags}
+        </div>
+        <li class="notes">&nbsp;<a href="{Permalink}">{block:Photo}{block:Exif}{block:Camera}{Camera}{/block:Camera},&nbsp;{block:Aperture}{Aperture}{/block:Aperture},&nbsp;{block:Exposure}{Exposure}{/block:Exposure},&nbsp;{block:FocalLength}{FocalLength}{/block:FocalLength}&nbsp;|&nbsp;{/block:Exif}{block:NewDayDate}{DayOfMonth} {ShortMonth} {ShortYear}{/block:NewDayDate}{/block:Photo}{block:Panorama}{block:NewDayDate}{DayOfMonth} {ShortMonth} {ShortYear}{/block:NewDayDate}{/block:Panorama}{block:Photoset}{block:NewDayDate}{DayOfMonth} {ShortMonth} {ShortYear}{/block:NewDayDate}{/block:Photoset}{block:Answer}{block:NewDayDate}{DayOfMonth} {ShortMonth} {ShortYear}{/block:NewDayDate}{/block:Answer}{block:Audio}{block:NewDayDate}{DayOfMonth} {ShortMonth} {ShortYear}{/block:NewDayDate}{/block:Audio}&nbsp;{24HourWithZero}:{Minutes}</a></li>
+      </div><!-- /postinfo -->
+
+    </div><!-- /post -->
+
+  {/block:Posts}
+
+  <div class="footer">
+    {block:NextPage}<a class="left" href='{NextPage}'>Older <span>Posts</span></a>{/block:NextPage}
+    {block:PreviousPage}<a class="right" href="{PreviousPage}">Newer <span>Posts</span></a>{/block:PreviousPage}
+
+    {block:PermalinkPagination}
+    {block:NextPost}<a class="left" href="{PreviousPost}">Older <span>Post</span></a>{/block:NextPost}
+    {block:PreviousPost}<a class="right" href="{NextPost}">Newer <span>Post</span></a>{/block:PreviousPost}
+    {/block:PermalinkPagination}
+  </div><!-- /footer -->
+</div> <!-- /postcontainer -->
+<br class="clear">
+<script type="text/javascript">
+(function () {
+    var mjx = document.createElement('script');
+    mjx.type = 'text/javascript';
+    mjx.src = 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML';
+    mjx.async = true;
+    var k = document.getElementsByTagName('script')[0];
+    k.parentNode.insertBefore(mjx, k);
+})();
+</script>
+</body>
+</html>

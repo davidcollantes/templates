@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{Title}{block:SearchPage}: Search results for "{SearchQuery}"{/block:SearchPage}{block:PostSummary}: {PostSummary}{/block:PostSummary}{block:PreviousPage}{block:Pagination}: Page {CurrentPage}{/block:Pagination}{/block:PreviousPage}{block:TagPage}: {URLSafeTag}{/block:TagPage}</title>
+<meta name="if:Hide Notecount" content="1"/>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+<meta name="viewport" content="width=690"> <!-- iPhone -->
+<meta name='description' content='{MetaDescription}' />
+<link href="http://static.tumblr.com/v335647/07Pmmdkvc/s_style1.css" rel="stylesheet" type="text/css">
+<style type='text/css'>{CustomCSS}</style>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+
+<div id="header">
+  <p><a rel="start up" title="{Title} home" href="/">{Title}</a> <span>is a {Description}</span></p>
+</div>
+
+{block:Posts}
+<div class='postcontainer'>
+<div class='post'>
+
+{block:RebloggedFrom}
+  <div class="posticonquote">;</div>
+{/block:RebloggedFrom}
+
+{block:Answer}      
+  <div class="posttext"></div>
+  <div class="questioncontainer">
+  <div class="asker">{Asker}:</div> 
+  <div class="question"> {Question}</div>
+  <div class="answer">{Answer}</div>
+{/block:Answer}
+
+{block:Text}
+<div class="posttext"></div>
+<div class='date'><span>{DayOfMonthWithZero}</span> <div class="month">{Month} {Year}</div><br /></div> <!--date-->
+  {block:Title}<a href='{Permalink}'><h3>{Title}</h3></a>{/block:Title}
+  {Body}
+{/block:Text}
+
+<div class="photo-post">
+{block:Photo}
+<div class="photocaption">
+  {LinkOpenTag}
+    <img src='{PhotoURL-Panorama}' alt='{PhotoAlt}'/>
+  {LinkCloseTag}
+  {block:Caption}{Caption}{/block:Caption}
+</div>
+{/block:Photo}
+</div>
+
+{block:Photoset}
+<div class="photoset">{Photoset-500}</div>
+<div class="photosetcaption">
+  {block:Caption}{Caption}{/block:Caption}
+</div>
+{/block:Photoset}
+
+{block:Quote}
+<div class='date'>
+  <span>{DayOfMonthWithZero}</span> <div class="month">{Month} {Year}</div><br />
+</div> <!--date-->
+<p class='quote'>{Quote}</p>
+<div class="quotesource">
+  {block:Source}<p>{Source}</p>{/block:Source}
+</div>
+<!-- <div class="posticonquote">;</div> -->
+{/block:Quote}
+
+{block:Link}
+<div class="linktitle">
+<a href='{URL}' {Target}>{Name}</a></div>
+  {block:Description}{Description}{/block:Description}
+{/block:Link}
+
+{block:Chat}
+<div class='date'>
+  <span>{DayOfMonthWithZero}</span> <div class="month">{Month} {Year}</div><br />
+</div> <!--date-->
+<table cellpadding='0' cellspacing='0px' width='100%' border='0' class='chatpost'>
+{block:Lines}
+  <tr class='{Alt}'>{block:Label}<td class='label'>{Label}</td>{/block:Label}<td class="lines">{Line}</td></tr>
+{/block:Lines}
+</table>
+{/block:Chat}
+
+{block:Audio}
+<div class="albumcover">
+{block:AlbumArt}<img src="{AlbumArtURL}" />{/block:AlbumArt}
+</div>
+<div id="trackinfo">
+<div class="artist">
+  {block:Artist}
+  {Artist}
+  {/block:Artist}
+</div><!--artist -->
+<div class="trackname">
+  {block:TrackName}
+  {TrackName}
+  {/block:TrackName}
+</div><!--trackname -->
+  <div class='audioplayer'>{AudioPlayerWhite}</div><!--audioplayer -->
+</div>
+{/block:Audio}
+
+{block:Video}
+<div class="videos">{Video-700}</div>
+<div class="videocaption">
+  {block:Caption}{Caption}{/block:Caption}
+</div>
+{/block:Video}
+
+<div class="postinfo">
+<div class='tags'>
+  {block:HasTags}
+    {block:Tags}<a href='{TagURL}'>#{Tag}</a>{/block:Tags}
+  {/block:HasTags}
+</div>
+
+<li class="notes"> <a href="{Permalink}">{24HourWithZero}{Minutes}</a></li>
+</div><!--postinfo-->
+</div>
+{/block:Posts}
+{/block:Posts}
+<div class='footer'>
+{block:NextPage}
+<a class="left" href='{NextPage}'>Older <span>Posts</span></a>
+{/block:NextPage}
+{block:PreviousPage}
+<a class="right"href='{PreviousPage}'>Newer <span>Posts</span></a>
+{/block:PreviousPage}
+{block:PermalinkPagination}
+{block:NextPost}
+<a class="left" href='{NextPage}'>Older <span>Post</span></a>
+{/block:NextPost}
+{block:PreviousPost}
+<a class="right"href='{PreviousPage}'>Newer <span>Post</span></a>
+{/block:PreviousPost}
+{/block:PermalinkPagination}
+</div>
+</div>
+<br class='clear' /> 
+</body>
+</html>

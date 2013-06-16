@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <title>antinode.dev{%block title %}{% endblock %}</title>
+ <meta name="description" content="Personal journal by Chyetanya Kunte.">
+ <meta name="viewport" content="width=702">
+ <link rel="icon" href="/favicon.ico">
+ <link rel="stylesheet" href="/css/vanilla.css" type="text/css">
+ <link rel="alternate" type="application/rss+xml" title="antinode.dev" href="/rss.xml">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1><span>Hello, I&rsquo;m</span> <a href="/colophon">Chyetanya Kunt&eacute;</a><span>, and this is</span> <a href="/">my personal site</a>.</h1>
+        </div><!-- /header -->
+
+        {% block body %}
+            {% block post %}{% endblock %}
+            {% block footer %}{% endblock %}
+        {% endblock %}
+
+        <div id="footer"><p>Copyright &copy; 2013 Chyetanya Kunte</p></div><!-- /footer -->
+    </div><!-- /container -->
+
+    <!-- MathJax -->
+    <script type="text/javascript">
+        (function () {
+            var mjx = document.createElement('script');
+            mjx.type = 'text/javascript';
+            mjx.src = 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML';
+            mjx.async = true;
+            var k = document.getElementsByTagName('script')[0];
+            k.parentNode.insertBefore(mjx, k);
+        })();
+    </script>
+    <!-- /MathJax -->
+
+</body>
+</html>

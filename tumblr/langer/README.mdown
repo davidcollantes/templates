@@ -1,0 +1,25 @@
+This is a Tumblr theme by Matt Langer[^1] hashed by ckunte.
+
+Summary of changes:
+
+* Updated the markup to html5.
+* Inclusion of new relationship[^2] elements.
+* Relative time using `{TimeAgo}` tag.
+* SEO optimization for bot instructions[^3].
+* Canonical link[^4].
+
+* CSS:
+
+	* Reset alignment to baseline.
+	* Customizable colors.
+	* Fonts in relative sizes (percentages and ems).
+	* Option to add Custom CSS via Customize -> Advanced.
+	* Fixed the partially visible photo post (IE6) by setting it to display:block.
+	* Theme degrades gracefully in IE 6 (Date/time column is invisible in IE, because it handles the left negative margin together with float poorly).
+* Spaces marked clearly (via commented markup) to add External comment system (viz., Disqus, or Intense Debate), and for inserting statistics, and Ad code snippets. (Open the downloaded file to see placeholders clearly marked for inserting the code snippets, such as Adsense ads; Google Analytics, Sitemeter or other statistics code for tracking.)
+
+[^1]: http://blog.mattlanger.com/post/83156314
+[^2]: http://blog.whatwg.org/the-road-to-html-5-link-relations
+[^3]: http://www.robotstxt.org/meta.html
+[^4]: http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html
+

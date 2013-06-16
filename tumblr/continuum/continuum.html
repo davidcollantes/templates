@@ -1,0 +1,519 @@
+<!DOCTYPE HTML>
+<html>
+<!--
+
+      Continuum: a tumblr theme by
+   Chyetanya Kunte, http://ckunte.net
+
+-->
+<head>
+	<meta charset="utf-8">
+	{block:IndexPage}
+ 	<title>{Title}</title>
+	 <meta name="description" content="{MetaDescription}">
+	{/block:IndexPage}
+	{block:PostSummary}
+	<title>{PostSummary}</title>
+	{/block:PostSummary}
+
+	<link rel="icon" href="{Favicon}">
+	<link rel="alternate" type="application/rss+xml"
+	 title="Subscribe to {Title}" href="{RSS}">
+
+	<meta name="viewport" content="width=device-width">
+
+	<!-- Defaults -->
+	<meta name="color:Background" content="#F5F5F5">
+	<meta name="color:Text" content="#000000">
+	<meta name="color:Link" content="#BBBBBB">
+	<meta name="color:Hover" content="#7B9C0A">
+	<meta name="font:Title" content="Helvetica, Sans-serif">
+	<meta name="font:Body" content="Helvetica, Sans-serif">
+
+	<!-- UI options -->
+	<meta name="if:Show Logo" content="0">
+	<meta name="text:Bio" content="A brief bio here.">
+	<meta name="if:Show Archive Button" content="1">
+	<meta name="if:Show RSS Button" content="1">
+	<meta name="if:Show Notes" content="1">
+	<meta name="if:Show Search Bar" content="1">
+
+	<!-- Third party service(s) -->
+	<meta name="text:GoogleAnalyticsId" content="">
+
+	<!--[if IE]>
+     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <style type="text/css" media="all">
+		body {
+			background:{color:Background};
+			color:{color:Text};
+			margin:0;
+			font-family:{font:Body};
+			font-size:14px;
+			line-height:1.6em;
+			}
+		 #bio {
+		        color:#333;
+		        margin:18px 0 -6px 0px;
+		        text-shadow:1px 1px 0px #ffe;
+		 }
+		#content {
+			background:transparent;
+			width:410px;
+			position:relative;
+			margin:20px auto;
+			padding:10px;
+			}
+		#footer {
+			color:#999;
+			font:Normal 9px {font:Body};
+			letter-spacing:.5px;
+			text-transform:uppercase;
+			margin:0 auto 25px auto;
+			padding:5px;
+			text-align:center;
+			}
+		#footer {
+			background:transparent;
+			width:410px;
+			position:relative;
+			}
+		.desc {
+			color:{color:Text};
+			text-shadow:1px 1px 0px #ffe;
+			margin-left:-60px;
+			margin-top:-20px;
+			}
+		code, pre {
+			font:12px Monaco, Monospace;
+			-khtml-border-radius:3px;
+			-moz-border-radius:3px;
+			-o-border-radius:3px;
+			-webkit-border-radius:3px;
+			border-radius:3px;
+			}
+		code {
+			background:#ffd;
+			border:1px #ddd solid;
+			padding:1px;
+			}
+		pre {
+			background:#333;
+			padding:2px 4px;
+			}
+		pre code {
+			background:transparent;
+			border:none;
+			color:#C6FF00;
+			}
+		a {
+			color:#000;
+			text-decoration:none;
+			border-bottom:1px {color:Link} solid;
+			}
+		a:hover {
+			color:#000;
+			border-bottom:1px {color:Hover} solid;
+			}
+		blockquote {
+			margin: 1em 0.5em;
+			font-size:1em;
+			padding: 0 .5em 0 1em;
+			border-left: 1px solid #bbb;
+			color:#222;
+			}
+		.srch { margin-top:-3px }
+		cite  { font-style:normal }
+		h1 {
+			font:Bold 30px {font:Title};
+			letter-spacing:-2px;
+			margin:0 0 30px -60px;
+			text-shadow:1px 1px 0px #ffd;
+			}
+		h1 a {
+			color:#555;
+			text-decoration:none;
+			text-shadow:1px 1px 0px #ffd;
+			border:0px transparent solid;
+			}
+		h1 a:hover {
+			color:#555;
+			text-shadow:1px 1px 0px #ffd;
+			border:0px transparent solid;
+			}
+		h2 {
+			font-family:{font:Title};
+			font-size:18px;
+			font-weight:normal;
+			margin:0 0 -9px;
+			text-shadow:1px 1px 0px #ffe;
+			}
+		h2 a {
+			text-decoration:none;
+			text-shadow:1px 1px 0px #ffe;
+			}
+		h3 { margin-bottom:-9px }
+		h4 {
+			color:#666;
+			font:500 9px {font:Body};
+			letter-spacing:.5px;
+			text-transform:uppercase;
+			margin:12px 0 -6px 0;
+			text-shadow:1px 1px 0px #ffe;
+    		}
+		#left {
+			position:absolute;
+			right:450px;
+			width:200px;
+			text-align:right;
+			}
+		.post {
+			position:relative;
+			color:{color:Text};
+			margin-bottom:3em;
+			}
+		.post div.labels {
+			position:absolute;
+			left:440px;
+			text-align:left;
+			width:100px;
+			}
+		.post div.date {
+			white-space:nowrap;
+			display:inline;
+			}
+		.post div.date a {
+			color:#666;
+			display:block;
+			text-decoration:none;
+			border:0;
+			}
+		.post div.date a:hover {
+			color:#444;
+			background:transparent;
+			}
+		img { border:0; border:none }
+		.caption { margin-top:.6em }
+		.conversation li {
+			margin-left:-40px;
+			margin-bottom:10px;
+			list-style:none;
+			}
+		.post-footer {
+			color:#969696;
+			font:Normal 9px 'Lucida Grande',Verdana,sans-serif;
+			text-transform:uppercase;
+			letter-spacing:.5px; margin-top:.45em;
+			}
+		.post-footer a {
+			color:#767676;
+			border:0;
+			}
+		.post-footer a:hover {
+			color:#464646;
+			border:0;
+			background:transparent;
+			}
+		ol.notes li {
+			margin-bottom:.35em;
+			margin-left:-40px;
+			list-style:none;
+			}
+		.conversation .label { font-weight:700 }
+		.post-footer img.heart, ol.notes img.avatar { vertical-align:-4px }
+		.regular img, img.regular { max-width: 400px; border:0 #fff solid }
+		.regular blockquote img { max-width: 150px }
+		.navleft { position:relative; float:left }
+		.navright { position:relative; float:right }
+		.navleft a, navright a { text-shadow:1px 1px 0px #ffe }
+		.navleft a:hover, .navright a:hover { background:transparent; color:#111 }
+		.photo img, img.photo, .regular img, img.regular,
+		.video object, object.video, .video embed, embed.video {
+			background:#fff;
+			padding:3px;
+			margin:0 0 -9px 0;
+			border:0px transparent solid;
+			-khml-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+			-o-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+			-moz-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+			-webkit-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+			box-shadow: 0 1px 10px rgba(0,0,0,.1);
+			}
+		.alignleft { float:left }
+		img.alignleft { display:inline; margin:2px 15px 0 0 }
+		.navcenter { color:#999 }
+		.navcenter a {
+			border:0!important;
+			border:none!important;
+			color:#777;
+			padding:0 3px;
+			}
+		.navcenter a:hover { color:#111 }
+		#nav ul    { float:right; margin:1px 0 0 0 }
+		#nav ul li { margin:1px 0; list-style:none }
+		#nav {
+			color:#333;
+			text-transform:uppercase;
+			font-size:9px;
+			letter-spacing:.15em;
+			}
+		#nav a {
+			color:#eee;
+			background:#888;
+			text-decoration:none;
+			border:0!important;
+			border:none!important;
+			padding:3px;
+			-khtml-border-radius:2px;
+			-o-border-radius:2px;
+			-moz-border-radius:2px;
+			-webkit-border-radius:2px;
+			border-radius:2px;
+			}
+		#nav a:hover {
+			color:#fff;
+			background:#333;
+			border:0!important;
+			border:none!important;
+			padding:3px;
+			}
+		hr, .footnotes hr {
+			border-color:#ccc;
+			border-style:solid;
+			border-width:1px 0 0;
+			width:120px;
+			}
+		hr { margin:20px auto; }
+		.footnotes hr { margin:20px 0 }
+		.footnotes {font: 11px/18px 'Lucida Grande',Verdana, sans-serif}
+		.logo {margin-bottom:-10px}
+		.spacer {margin-bottom:10px}
+		sup {font: 9px/12px 'Lucida Grande',Verdana, sans-serif}
+		input { font-family: {font:Body}; font-size:14px }
+		{CustomCSS}
+	</style>
+
+  {block:IfGoogleAnalyticsId}
+  <script type="text/javascript">
+	//<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{text:GoogleAnalyticsId}']);
+    _gaq.push(['_trackPageview']);
+	//]]>
+  </script>
+  {block:IfGoogleAnalyticsId}
+
+</head>
+<body>
+ <div id="wrap">
+  <section id="content">
+   <header>
+    <h1><a rel="start up" title="{Title} {lang:Home}" href="/">{block:IfShowLogo}<img class="logo" src="{PortraitURL-40}" title="{Title}">&nbsp;{/block:IfShowLogo}{Title}</a></h1>
+     <p class="desc">{Description}</p>
+     <p class="spacer">&nbsp;</p>
+   </header>
+
+      <aside id="left">
+
+       <div id="nav">
+       <ul>
+        {block:HasPages}
+         {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+        {/block:HasPages}
+         {block:IfShowArchiveButton}
+           <li><a title="{lang:Browse the archive}" href="/archive">archive</a></li>
+         {/block:IfShowArchiveButton}
+         {block:IfShowRSSButton}
+           <li><a title="{lang:Subscribe via RSS} {lang:Feed}" href="{RSS}">rss</a></li>
+         {/block:IfShowRSSButton}
+       </ul>
+       </div> <!-- /nav -->
+
+    </aside><!-- /left -->
+
+  {block:SearchPage}
+  {block:NoSearchResults}
+    <p class="srch">{lang:No search results for SearchQuery 2}</p>
+  {/block:NoSearchResults}
+  {block:SearchResults}
+    <p>{lang:Found SearchResultCount results for SearchQuery 2}</p>
+  {/block:SearchResults}
+  {/block:SearchPage}
+
+  {block:TagPage}
+    <p class="srch"><p>{lang:Posts tagged Tag 2}</p>
+  {/block:TagPage}
+
+  <section>
+  {block:Posts}
+   <div class="post" id="{PostID}">
+    <div class="labels">
+      {block:NewDayDate}
+
+        <div class="date"><a rel="bookmark" href="{Permalink}">{ShortMonth}
+        {DayOfMonth}{block:PermalinkPage}, {ShortYear}{/block:PermalinkPage}</a></div>
+      {/block:NewDayDate}
+
+      {block:SameDayDate}
+          <div class="date"><a rel="bookmark" href="{Permalink}">+</a></div>
+      {/block:SameDayDate}
+    </div>
+
+    {block:Regular}
+      <div class="regular">
+       {block:Title}<h2>{Title}</h2>{/block:Title}
+       {Body}
+      </div>
+    {/block:Regular}
+
+    {block:Photo}
+      <div class="photo">
+       {LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}">{LinkCloseTag}
+       {block:Caption}
+         <div class="caption">{Caption}</div>
+       {/block:Caption}
+      </div>
+    {/block:Photo}
+
+    {block:Photoset}
+      <div class="photo">
+       {Photoset-400}
+       {block:Caption}
+         <div class="caption">{Caption}</div>
+       {/block:Caption}
+      </div>
+    {/block:Photoset}
+
+    {block:Quote}
+      <div class="quote">
+       {block:Source}
+        <div class="source">
+         <cite>{Source}&#58;</cite>
+        </div>
+       {/block:Source}
+          <blockquote>{Quote}</blockquote>
+      </div>
+    {/block:Quote}
+
+    {block:Link}
+      <div class="link">
+        <a href="{URL}" class="link" {Target}>{Name}</a> &rsaquo;
+       {block:Description}
+         {Description}
+       {/block:Description}
+      </div>
+    {/block:Link}
+
+    {block:Chat}
+     <div class="conversation">
+      {block:Title}<h2>{Title}</h2>{/block:Title}
+      <ul>
+       {block:Lines}
+        <li>
+         {block:Label}<span class="label">{Label}</span>{/block:Label}
+             {Line}
+            </li>
+           {/block:Lines}
+          </ul>
+         </div>
+        {/block:Chat}
+
+        {block:Audio}
+         <div class="audio">
+          {AudioPlayerGrey}
+          {block:Caption}
+           <div class="caption">{Caption}</div>
+          {/block:Caption}
+         </div>
+        {/block:Audio}
+
+        {block:Video}
+         <div class="video">
+          {Video-400}
+          {block:Caption}
+           <div class="caption">{Caption}</div>
+          {/block:Caption}
+         </div>
+        {/block:Video}
+
+     <div class="post-footer">
+     {block:IfShowNotes}
+      {block:NoteCount}
+        <a rel="bookmark" href="{Permalink}">
+     	{block:IfNotBackgroundImage}
+         <span style="color:#FF0000">&hearts;</span>&nbsp;
+        {/block:IfNotBackgroundImage}
+        {NoteCount}</a>&nbsp;&nbsp;
+      {/block:NoteCount}
+     {/block:IfShowNotes}
+         {block:HasTags}
+           {block:Tags}<a href="/tagged/{Tag}">{Tag}</a>&nbsp;&nbsp;{/block:Tags}
+         {/block:HasTags}
+      </div> <!-- post-footer -->
+    </div> <!-- /post -->
+
+   <section>
+	{block:IfShowNotes}
+        {block:PermalinkPage}
+          {block:PostNotes}
+            {PostNotes}
+          {/block:PostNotes}
+        {/block:PermalinkPage}
+	{/block:IfShowNotes}
+   </section>
+
+  {/block:Posts}
+  </section>
+
+  {block:Pagination}
+  {block:NextPage}
+  <div class="navleft">&lsaquo;&nbsp;<a rel="prev prefetch" href="{NextPage}">{lang:Older}</a></div>
+  {/block:NextPage}
+  {block:PreviousPage}
+  <div class="navright"><a rel="next prefetch" href="{PreviousPage}">{lang:Newer}</a>&nbsp;&rsaquo;</div>
+  {/block:PreviousPage}
+  <br />
+  {/block:Pagination}
+
+   {block:PermalinkPagination}
+    {block:NextPost}
+     <div class="navright"><a rel="next prefetch" href="{NextPost}">{lang:Newer}</a>&nbsp;&rsaquo;</div>
+    {/block:NextPost}
+    {block:PreviousPost}
+     <div class="navleft">&lsaquo;&nbsp;<a rel="prev prefetch" href="{PreviousPost}">{lang:Older}</a></div>
+    {/block:PreviousPost}
+     <br />
+   {/block:PermalinkPagination}
+
+  </section><!-- /content -->
+
+
+    <section id="footer">
+      <div class="navcenter">
+       {block:IfShowSearchBar}
+        <form action="/search" method="get">
+	      <input name="q" type="search" placeholder="{lang:Search} {Title}" value="{SearchQuery}" size="27">
+	    </form>
+	      <p class="spacer">&nbsp;</p>
+       {/block:IfShowSearchBar}
+		<span>Theme by <a title="Chyetanya Kunte" href="http://ckunte.net/">ckunte</a>.</span>
+	  </div><!-- /navcenter -->
+    </section><!-- footer -->
+ </div><!-- /wrap -->
+ {block:IfGoogleAnalyticsId}
+ <script type="text/javascript">
+ //<![CDATA[
+   (function() {
+     var ga = document.createElement('script');
+     ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0];
+     s.parentNode.insertBefore(ga, s);
+   })();
+ //]]>
+ </script>
+ {/block:IfGoogleAnalyticsId}
+</body>
+</html>

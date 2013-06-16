@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{Title}{block:SearchPage}: Search results for "{SearchQuery}"{/block:SearchPage}{block:PostSummary}: {PostSummary}{/block:PostSummary}{block:PreviousPage}{block:Pagination}: Page {CurrentPage}{/block:Pagination}{/block:PreviousPage}{block:TagPage}: {URLSafeTag}{/block:TagPage}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{Favicon}">
+    <link rel="alternate feed" type="application/rss+xml" title="RSS" href="{RSS}">
+    <meta name="viewport" content="width=775"> <!-- iPhone -->
+    <meta name="description" content="{Description}">
+    <link href='http://fonts.googleapis.com/css?family=Neuton:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/v335647/ZQamm9xnw/r_style.css">
+
+    <style type="text/css">
+      {CustomCSS}
+    </style>
+    {block:PermalinkPage}<link rel="canonical" href="{Permalink}" />{/block:PermalinkPage}
+ <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<!-- 
+<link rel="stylesheet" href="http://static.tumblr.com/v335647/6Nlmhr4fd/default.css">
+<script src="http://static.tumblr.com/v335647/Pcjmhr438/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+-->
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <div class="header">
+        <h1><a rel="start up" href="/"><img alt="" src="{PortraitURL-128}" title="{Title}"></a></h1>
+        <p class="description">{Description}</p>
+      </div>
+
+      <div class="main">
+
+        {block:SearchPage}
+        <div class="post">
+          <p>Search for <em>{SearchQuery}</em> turned up {SearchResultCount} result(s).</p>
+        </div>
+        {/block:SearchPage}
+
+        {block:TagPage}
+        <div class="post">
+            <p>Posts tagged <em>{Tag}</em>.</p>
+          </div>
+        {/block:TagPage}
+
+        {block:Posts}
+        <div class="post">
+            <div class="regular">
+          {block:Regular}
+              {block:Title}<h2>{Title}</h2>{/block:Title}
+              {Body}
+          {/block:Regular}
+          </div>
+
+        {block:Photo}
+          <p><span class="photo">{LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" title="{PhotoAlt}">{LinkCloseTag}</span></p>
+          <div class="commentary">{Caption}</div>
+        {/block:Photo}
+
+        {block:Quote}
+        {block:Source}<p>{Source}:</p>{/block:Source}
+          <blockquote>{Quote}</blockquote>
+        {/block:Quote}
+
+        {block:Video}
+          <p>{Video-500}</p>
+          <div class="commentary">{Caption}</div>
+        {/block:Video}
+
+        {block:Audio}
+          <p>{AudioPlayerGrey}</p>
+          <div class="commentary">{Caption}</div>
+        {/block:Audio}
+
+        {block:Link}
+          <p><a href="{URL}" {Target}>{Name}</a>&nbsp;&rsaquo;</p>
+          {block:Description}{Description}{/block:Description}
+        {/block:Link}
+
+        {block:Conversation}
+          {block:Title}<h2>{Title}</h2>{/block:Title}
+          <div class="commentary">
+          {block:Lines}
+          {block:Label}<strong>{Label}</strong>{/block:Label} {Line}<br />
+          {/block:Lines}
+          </div>
+        {/block:Conversation}
+        </div>
+        
+        <div class="post-footer">
+            <a href="{Permalink}">{TimeAgo}</a>&nbsp;&nbsp;
+            {block:HasTags}
+            {block:Tags}
+             <a href="{TagURL}">{Tag}</a>
+            {/block:Tags}
+            {/block:HasTags}
+        </div>
+        
+        {/block:Posts}
+
+        {block:Pagination}
+        {block:NextPage}
+        <div class="navleft">
+          &larr;&nbsp;<a rel="next" href="{NextPage}">Older</a>
+        </div>
+        {/block:NextPage}
+        {block:PreviousPage}
+        <div class="navright">
+          <a rel="previous" href="{PreviousPage}">Newer</a>&nbsp;&rarr;
+        </div>
+        {/block:PreviousPage}
+        <div class="navcenter">
+          <span class="long_quote">{CurrentPage}</span>
+        </div>
+        {/block:Pagination}
+        {block:PermalinkPagination}
+        {block:NextPost}
+        <div class="navleft">
+          &larr;&nbsp;<a rel="next" href="{NextPost}">Older</a>
+        </div>
+        {/block:NextPost}
+        {block:PreviousPost}
+        <div class="navright">
+          <a rel="previous" href="{PreviousPost}">Newer</a>&nbsp;&rarr;
+        </div>
+        {/block:PreviousPost}
+        {/block:PermalinkPagination}
+
+      </div>
+        <div class="post-footer credits"><a href="/archive">archive</a> &bull; <a href="/rss">rss</a> &bull; {Title} is powered by <a href="http://www.tumblr.com">tumblr.</a>
+      </div>
+    </div>
+  </body>
+</html>

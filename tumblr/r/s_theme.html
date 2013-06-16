@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+* Theme:     Shift
+* Author:    Benjamin Nathan
+* Website:   benjaminnathan.nl
+* Email:     benjamin@benjaminnathan.nl
+-->
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+<meta name='description' content='{MetaDescription}' />
+<meta name="image:Avatar" content="http://static.tumblr.com/nlywmlg/JDgmbkg43/f1nsaylmifu8l47jj0cv.png"/>
+
+<meta name="color:Sidebar Background" content="#1b1918"/>
+<meta name="color:Avatar Background" content="#1b1918" />
+<meta name="text:Google Analytics ID" content="">
+
+<meta name="text:Disqus Account" content=""/>
+<meta name="text:Twitter For Latest Tweet" content=""/>
+
+<meta name="if:Hide Comment Count" content=""/>
+<meta name="if:Hide Tags" content="0"/>
+<meta name="if:Hide Notecount" content="0"/>
+<meta name="if:Hide Latest Tweet" content="0"/>
+<meta name="if:Hide About Section" content="1"/>
+<meta name="text:Email" content=""/>
+
+<meta name="text:Disqus Account" content=""/>
+<meta name="text:Twitter" content=""/>
+<meta name="text:Facebook" content=""/>
+<meta name="text:Dribbble" content=""/>
+<meta name="text:Flickr" content=""/>
+<meta name="text:YouTube" content=""/>
+<meta name="text:Skype" content=""/>
+<meta name="text:Deviantart" content=""/>
+<meta name="text:Vimeo" content=""/>
+<meta name="text:Behance" content=""/>
+<meta name="text:Github" content=""/>
+
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=BenchNine:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Chau+Philomene+One:400,400italic' rel='stylesheet' type='text/css'>
+
+<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+<script language="javascript" src="http://static.tumblr.com/nlywmlg/wiembm87o/jquery.tweet.js" type="text/javascript"></script>
+<script type='text/javascript'>
+jQuery(function($){
+$("#twitter").tweet({
+username: "{text:Twitter For Latest Tweet}",
+loading_text: "Loading Tweets...",
+count: 1
+});
+});
+</script>
+<link href='http://static.tumblr.com/nlywmlg/xErmbmz5q/socialico.css' rel='stylesheet' type='text/css'>
+<style type='text/css'>
+@import url('http://static.tumblr.com/nlywmlg/04bmbn0yr/iconic_stroke_tumblr.css');
+       
+@font-face {
+font-family: 'EntypoRegular';
+src: url('http://static.tumblr.com/nlywmlg/drhmajom0/entypo-webfont.eot');
+src: url('http://static.tumblr.com/nlywmlg/drhmajom0/entypo-webfont.eot?#iefix') format('embedded-opentype'),
+url('http://static.tumblr.com/nlywmlg/3RMmajomo/entypo-webfont.woff') format('woff'),
+url('http://static.tumblr.com/nlywmlg/h65majon6/entypo-webfont.ttf') format('truetype'),
+url('http://static.tumblr.com/nlywmlg/cvCmajonn/entypo-webfont.svg#EntypoRegular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+/* Base styles*/
+#latesttweet{
+padding-left:55px;
+display:block;
+width:160px; 
+font-family: 'Lato', Helvetica;
+color:#585756;
+font-weight:400;
+margin-bottom:30px;
+} 
+
+h2{
+font-family: 'Lato', Helvetica;
+color:#928c86;
+font-weight:600;
+font-size:12px;
+line-height:20px;
+text-transform:uppercase;
+margin-bottom:2px;
+margin-top:10px;
+}    
+
+#twitter{
+font-family: 'Lato', Helvetica;
+font-weight:400;
+font-size:13px;
+line-height:20px;
+color:#525050;
+
+} 
+#twitter li {
+list-style:none;
+padding:0;
+margin:0;
+float:none;
+padding: 0px 0 0px 0;
+}
+
+#twitter .tweet_time a {
+color:#3e3a39;
+padding-top:2px;
+display:block;
+font-size:11px;
+margin-top:-2px;
+opacity:0.9;
+}
+#twitter ul li a {
+color:#3e3a39;
+font-size:13px;
+margin-top:0px;
+-ms-word-break: break-all;
+word-break: break-all;
+// Non standard for webkit
+word-break: break-word;
+-webkit-hyphens: auto;
+-moz-hyphens: auto;
+hyphens: auto;
+
+}
+#twitter ul{
+padding:0;
+margin:0;
+float:none;   
+}
+{block:IfHideLatestTweet}
+#latesttweet{
+display:none;   
+}    
+{/block:IfHideLatestTweet}
+
+body {
+font-size:1.4em;
+line-height:140%;
+color: rgba(0,0,0,0.8);
+margin:0 0 0 0;
+background: #dad4c9;
+background:url('http://static.tumblr.com/nlywmlg/WMvmbs8qa/bgpat42.jpg');
+background-attachment:fixed;
+height:100%;
+padding-bottom:220px;
+}
+.hidestatic {
+display: none;
+}
+a {
+text-decoration:none;
+color: rgba(0,0,0,0.8);
+}
+.title{
+margin: 0 auto;
+text-align:center;
+margin-top:-22px;
+margin-bottom:75px;
+}
+h1 {
+position:relative;
+padding:5px 5px 5px 15px;
+line-height:66px;
+font-style:italic;
+font-family: 'Chau Philomene One', Helvetica, sans-serif;
+font-size:56px;
+font-weight:900;
+color: rgba(255,255,255,1);
+display:inline-block;
+text-align:center;
+letter-spacing:auto;
+z-index:88;
+}
+.threedee{
+text-shadow:
+0px 1px 0 rgba(244,244,244,0.4),
+0px 1px 0 rgb(144,144,144),
+0px 3px 0 rgb(124,124,124),
+0px 3px 0 rgb(104,104,104),
+0px 3px 0 rgb(84,84,84), 
+0px 4px 0 rgb(64,64,64),
+0px 5px 6px rgba(0,0,0,0.2),
+0px 5px 1px rgba(0,0,0,0.3),
+0px 0px 6px rgba(0,0,0,.1),
+0px 2px 10px rgba(0,0,0,.1);
+}
+.avatarportrait{
+margin-left:78px;
+margin-top:-20px;
+margin-bottom:-2px;
+display:block;
+position:relative;
+-webkit-border-radius:8px;
+border-radius:8px;
+width:100px;
+height:100px;
+border:3px solid #000;
+-webkit-transition: all 0.2s ease-in-out;
+-moz-transition: all 0.2s ease-in-out;
+-ms-transition: all 0.2s ease-in-out;
+-o-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+}
+.avatarbackground{
+width:260px;
+height:300px;
+background:#1b1918;
+background:{color: Avatar Background};
+z-index:1;
+display:block;
+position:absolute;
+top:0;
+left:0;
+}
+.avatarportrait img{
+width:100px;
+height:100px;
+display:block;
+position:relative;
+-webkit-border-radius:4px;
+border-radius:4px;
+z-index:22;
+box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+}
+h3 {
+z-index:999;
+position:relative;
+line-height:45px;
+margin-bottom:20px;
+font-weight:700;
+margin-top:-20px;
+text-align:center;
+color: #3a3435;
+font-family: 'BenchNine', Helvetica;
+text-transform:uppercase;
+font-size:44px;
+}
+
+/*Description*/
+p.description{
+padding-left:55px;
+display:block;
+font-family: 'Lato', Helvetica;
+font-weight:400;
+font-size:15px;
+line-height:20px;
+width:140px;
+color:rgba(255,255,255,0.25);
+clear:both;
+}
+.descriptiontitle{
+padding-left:55px;
+margin-bottom:-10px;
+}
+
+/* Navigation */
+.nav  ul {
+clear:both;
+float:left;
+margin:0;
+padding:0;
+padding-left:52px;
+margin-bottom:40px;
+}
+.nav  ul li {  
+list-style:none;
+margin-top:10px;
+
+}
+.nav  ul li a{   
+margin-top:10px;
+-webkit-border-radius:2px;
+border-radius: 2px;
+background:rgba(255,255,255,0.03);
+padding: 8px 26px;
+display:block;
+font-family: 'BenchNine', Helvetica;
+text-transform:uppercase;
+font-weight:300;
+font-size:20px;
+color:#b3b3b3;
+}
+.nav  ul li a span{
+margin-right:10px;
+font-weight:auto !important;
+font-size:20px !important;
+vertical-align:0px !important;
+color:#b7d753;
+}
+.nav ul li a:hover{
+background:#272321;
+background: rgba(64,60,57,0.4);
+} 
+.nav  ul li:nth-child(2) span{
+color:#e7c960;
+}
+.nav  ul li:nth-child(3) span{
+color:#f3a74f;
+}
+.nav  ul li:nth-child(4) span{
+color:#d35a5a;
+} 
+.nav  ul li:nth-child(5) span{
+color:#d9688d;
+} 
+.nav  ul li:nth-child(6) span{
+color:#de89bf;
+} 
+.nav ul li:nth-child(7) span{
+color:#89a3de;
+} 
+#header{
+height:70px;
+text-align:center;
+padding-left:300px;
+}   
+#sidebar{
+float:left;
+height:100%;
+background:#151311;
+background:{color: Sidebar Background};
+left:0;
+top:0;
+width:260px;
+padding:0;
+margin:0;
+position:fixed;
+padding-top:70px;
+overflow:auto;
+
+}
+#wrapper {
+width:700px;
+margin:0 auto;
+padding-left:232px;
+} 
+.postcontainer {
+margin: 0 auto;
+width:500px;
+clear:both;
+}
+.post {
+box-shadow: 0px 1px 1px rgba(0,0,0,0.08);
+position:relative;
+margin-top:0;
+background:#fff;
+color:#7a7a7a;
+width:400px;
+padding:60px 60px 80px 60px;
+margin-bottom:70px;
+font-family: 'ABeeZee', 'Helvetica Neue', Helvetica;
+font-weight:300;
+text-align:left;
+}
+.post:before{
+ content:"";
+ position:absolute;
+ bottom:4px;
+ left:10px;
+ width:96%;
+ height:90%;
+ box-shadow: 0px 4px 8px rgba(0,0,0,0.12);
+-moz-transform: rotate(-3deg) skewX(-2deg) skewY(-2deg);
+-webkit-transform: rotate(-1deg)  skewX(-1deg) skewY(0deg);
+-o-transform: rotate(-3deg) skewX(-2deg) skewY(-2deg);
+-ms-transform: rotate(-3deg) skewX(-2deg) skewY(-2deg);
+transform: rotate(-3deg) skewX(-2deg) skewY(-2deg);
+ z-index:-1;
+}    
+.post p{
+margin-top:-6px;
+}
+.post p, .post li, .post blockquote {
+font-size:15px;
+line-height:24px;
+}
+.post a{
+font-weight:400;
+color: #ccc;
+}
+.post blockquote{
+padding-left:10px;
+margin-left:0;
+border-left: 4px solid #fbf9f5;
+}
+.post img {
+z-index:10;    
+position:relative;
+}    
+.post strong {
+color:#3e3e3e;   
+font-weight:400;
+}    
+.photo-post img {
+display:block;
+clear:both;
+width:520px;
+position:relative;
+padding-bottom:40px;
+margin: -60px 0 -20px -60px;
+z-index:10;
+}   
+.post .photocaption {
+margin-bottom:-30px;
+}
+.photoset {
+margin: 0 auto;
+display:block;
+clear:both;
+width:520px;
+position:relative;
+padding-bottom:35px;
+margin: -50px 0 -20px -25px;
+}    
+.photoset iframe{
+max-width:520px;
+}
+.post .photosetcaption {
+    margin: 0 auto;
+margin-bottom:-20px;
+width:400px;
+}
+.videos {
+width:520px;
+margin: -60px 0 30px -60px;
+}    
+.videocaption{
+margin-bottom:-30px;
+}
+.videos iframe, .videos embed, .videos object{
+width:100%;
+}
+.asker{
+text-transform:uppercase;
+text-align:center;
+color:#aeaeae;
+font-size:10px;
+letter-spacing:4px;
+font-weight:400;
+}
+.question {
+color: #3a3435;
+text-transform:uppercase;
+font-family: 'BenchNine', Helvetica; line-height:15px;
+font-size:33px;
+font-weight:700;
+line-height:1.1em;
+display:block;
+clear:both;
+text-align:center;
+}
+.questioncontainer{
+margin-bottom:15px;
+}
+.answer{
+text-align:center;
+}    
+.postinfo {
+position:absolute;
+text-transform:uppercase;
+bottom:0px;
+background:#fbf9f5;
+left:0px;
+text-align:center;
+width:510px;
+padding-left:10px;
+padding-bottom:6px;
+}
+.postinfo:after{
+content:"";
+position:absolute;
+top:-3px;
+left:0;
+background:url('http://static.tumblr.com/nlywmlg/2rZmbokv3/postinfo_top.png');
+width:100%;
+background-repeat:repeat-x;
+height:6px;
+}    
+.postinfo a{
+float:left;
+color: #dbd3c4;
+font-weight:600;
+font-size:9px;
+font-family: 'Lato', 'Helvetica Neue', Helvetica;
+letter-spacing:1px;
+line-height:16px;
+padding: 2px 6px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+margin-right:10px;
+}
+{block:IfHideTags}
+.tags{
+display:none;
+}
+{/block:IfHideTags}         
+.tags {
+}
+.tags a{
+margin-top:10px;
+margin-right:-7px;
+position:relative;
+}
+.tags a:after{
+content:","
+}
+.tags a:last-child:after{
+content:none; 
+}
+.tags a:last-child{
+padding-right:10px;   
+border-right:2px dotted #ece4d5;
+}
+li.notes{
+list-style:none;
+}
+li.notes a{
+margin-left:10px;
+float:left;
+display:inline;
+clear:none;
+margin-top:10px;
+padding-right:10px;
+} 
+{block:IfDisqusAccount}
+li.notes a{
+border-right:2px dotted #ece4d5;
+} 
+{/block:IfDisqusAccount}
+
+{block:IfHideNoteCount}
+li.notes{display:none;
+}
+{/block:IfHideNoteCount}   
+.comments a {
+margin-left:-6px;
+float:left;
+display:inline-block;
+margin-top:10px;
+width:68px;
+}
+.date {
+text-transform:uppercase;
+text-align:center;
+font-size:10px;
+letter-spacing:4px;
+color:#aeaeae;
+font-weight:400;
+margin-bottom:20px;
+}
+.month{
+display:inline;
+}
+.linktitle{
+position:relative;
+z-index:202;
+text-align:center; 
+}    
+.linktitle a{
+background:#fff;
+padding: 0 15px 0 15px;
+color: #3a3435;
+text-transform:uppercase;
+font-family: 'BenchNine', Helvetica; line-height:15px;
+font-size:33px;
+margin-bottom:20px;
+font-weight:700;
+line-height:1.1em;
+margin-top:0px;
+}
+.linktitle:after{
+content:"";
+position:absolute;
+width:100%;
+height:10px;
+border-bottom:1px solid #f0f0f0;
+top:5px;
+left:0;
+z-index:-1;
+} 
+p.quote {
+text-align:center;
+color: #3a3435;
+text-transform:uppercase;
+font-family: 'BenchNine', Helvetica; line-height:15px;
+font-size:33px;
+margin-bottom:20px;
+font-weight:700;
+line-height:1.1em;
+margin-top:0px;
+z-index:999 !important;
+position:relative;
+}
+.quotesource, .quotesource p{
+margin: 0 auto;
+float:none;
+text-align:center !important;   
+}    
+.chatpost {
+margin-top:0px;
+font-size:15px;
+}
+.chatpost td{
+margin:0;
+}
+.chatpost td.label {
+text-align:right;
+border-right:1px solid #f0f0f0;
+padding-right:10px;
+font-weight:700;
+font-family: 'BenchNine', Helvetica;
+text-transform:uppercase;
+font-size:20px;
+color:#525252 !important;
+}
+.chatpost tr td{
+margin: 0;
+padding:0;
+padding:5px;
+padding-left:10px;
+}  
+.chatpost tr.odd td {
+border-bottom:1px solid #f0f0f0;
+color: #a3a3a3;
+}
+.chatpost tr.even td {
+border-bottom:1px solid #f0f0f0;
+color: #ccc;
+}
+.chatpost tr:last-child td{
+border-bottom:none;
+}
+.audioplayer{
+padding:10px;
+border:1px solid #ececec;
+-webkit-border-radius:5px;
+border-radius:5px;
+display:block;
+clear:both;
+}
+.audioplayer *{
+text-align:center;
+width:100%;
+height:60px;
+}    
+
+.albumcover{
+display:inline;
+float:left;
+}
+.albumcover img{
+display:inline-block;
+max-width:80px;
+margin-bottom:20px;
+margin-left:40px;
+-webkit-border-radius:2px;
+border-radius:2px;
+}
+.artist{
+opacity:0.6;
+font-weight:400;
+display:block;
+padding-left:170px;
+margin-bottom:5px;
+margin-top:10px;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+.trackname{
+font-weight:400;
+font-size:18px;
+display:block;
+padding-left:170px;
+color: #3a3435;
+text-transform:uppercase;
+font-family: 'BenchNine', Helvetica; line-height:15px;
+font-size:33px;
+}
+.clear {
+clear:both;
+}
+ol.notes {
+width:70%;
+}
+ol.notes,
+ol.notes li {
+list-style-type:none;
+color: #413b39;
+line-height:12px;
+font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+font-weight:400;
+font-size:12px;
+}
+ol.notes li a{
+color: #979797;
+opacity:1;
+font-weight:500;
+}
+ol.notes li.note {
+padding:4px;
+}
+ol.notes li img{
+-webkit-border-radius:2px;
+border-radius:2px;
+}
+ol.notes li.note img.avatar {
+vertical-align:-6px;
+margin-right:5px;
+width:16px;
+height:16px;
+padding: 2px 2px 2px 4px;
+}
+ol.notes li.note blockquote a {
+text-decoration:none;
+color:#979797;
+border-left: 2px solid #454545;
+margin-left:-30px;
+padding-left:10px;
+font-weight:400;
+opacity:0.6;
+}  
+.footer {
+clear:both;
+width:520px;
+margin: 0 auto;
+margin-top:-50px;
+padding:0;
+}
+.footer a {
+text-align:center;
+color: #3a3435;
+font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+text-transform:uppercase;
+font-size:10px;
+letter-spacing:2px;
+opacity:0.5;
+font-weight:600;
+}
+.footer a span{
+opacity:0.8;   
+font-weight:300;
+}    
+.footer a:hover {
+opacity:0.7;
+}
+.footer a.left {
+float:left;
+}
+.footer a.right {
+float:right;
+}
+.pagecount{
+margin-left:42%;
+font-size: 12px;
+font-family: 'Helvetica Neue', Helvetica, sans-serif;
+font-weight:500;
+color: rgba(0,0,0,0.3);
+text-transform:uppercase;
+letter-spacing:5px;
+text-shadow: 0px 1px 0px rgba(255,255,255,0.5);
+margin-top:57px;
+}
+.pagecount span{
+font-size:14px;
+color: rgba(0,0,0,0.6);
+vertical-align:-1px;
+}
+#disqus_thread {
+float:left;
+width:100% !important;
+display: block;
+clear: both;
+margin-top:140px;
+margin-bottom:60px;
+}
+#disqus_thread p{
+opacity:0.5;
+}
+#disqus_thread img{
+width:auto;
+box-shadow:none;
+}
+#disqus_thread a {
+color: #dda758;
+}
+.posticonquote{
+color:#f4efe6;
+z-index:1 !important;
+font-family:'EntypoRegular', Helvetica, Arial;
+font-size:320px;
+opacity:0.4;
+position:absolute;
+top:30px;
+left:20px;
+}
+#socialbar ul{
+width:140px;
+padding-left:55px;
+padding-bottom:60px;
+}
+#socialbar ul li{
+margin-bottom:5px;
+float:left;
+list-style:none;
+padding:0;
+font-weight:400;
+}
+.socico {
+display: inline-block;
+background-image: url('http://static.tumblr.com/nlywmlg/Po3mbo57m/shiftsmall.png');   
+width:30px;
+height:30px;
+background-position: 0px 0px;
+background-repeat: no-repeat;
+padding:0;
+margin:0;
+}  
+.twitter{
+background-position: 0 0;
+} 
+.facebook{
+background-position: -30px 0;
+} 
+.dribbble{
+background-position: -60px 0;
+}
+.flickr{
+background-position: -90px 0;
+} 
+.skype{
+background-position: -120px 0;
+} 
+.youtube{
+background-position: -150px 0;
+} 
+.github{
+background-position: -180px 0;
+} 
+.vimeo{
+background-position: -210px 0;
+} 
+.deviantart{
+background-position: -240px 0;
+} 
+.behance{
+background-position: -270px 0;
+} 
+#socialbar ul li a{
+margin-right:5px;
+}
+.more{
+z-index:202;
+text-align:center;
+position:relative;
+}
+.more:after{
+content:"";
+position:absolute;
+width:100%;
+height:5px;
+border-bottom:1px solid #f0f0f0;
+top:13px;
+left:0;
+z-index:-1;   
+}    
+a.readmore{
+background:#fff;
+padding: 0 15px 0 15px;
+text-transform:uppercase;
+text-align:center;
+font-size:10px;
+letter-spacing:4px;
+color:#aeaeae;
+font-weight:400;
+}  
+@media screen and (max-height:850px) {
+.title {
+margin-bottom:30px;    
+}  
+.nav  ul li {  
+margin-top:0px;
+}
+.avatarbackground{
+height:276px;
+}
+}
+
+@media screen and (max-height:800px) {
+.title {
+margin-bottom:30px;    
+}  
+.nav  ul li {  
+margin-top:0px;
+}
+.avatarbackground{
+height:260px;
+}
+
+.avatarportrait{
+margin-top:-40px;
+
+}
+}
+
+@media screen and (max-height:725px) {
+.title {
+margin-bottom:0px;  
+margin-top:-30px;
+}  
+.nav  ul li {  
+margin-top:0px;
+}
+
+.nav ul {
+ margin-bottom:20px;   
+}    
+.avatarbackground{
+height:238px;
+}
+
+.avatarportrait{
+margin-top:-40px;
+margin-bottom:0;
+}
+#latesttweet{
+
+margin-bottom:-5px;
+} 
+}
+{CustomCSS}
+</style>
+{block:ifGoogleAnalyticsID}
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+{/block:ifGoogleAnalyticsID}
+</head>
+<body>
+<div id="header"></div>
+<div id='wrapper'>
+<div id="sidebar">
+<div class="avatarportrait"><a href="/"><img src="{image:Avatar}"></a></div>
+<div class="avatarbackground"></div>
+<div class="title">
+<a href="/"><h1 class="threedee">{Title}</h1></a> 
+</div>
+{block:IfNotHideAboutSection}
+{block:Description}
+<div class="descriptiontitle"><h2>About</h2></div>
+<p class="description">{Description}</p>
+{/block:Description}
+{/block:IfNotHideAboutSection}
+<div class="nav">
+<ul>
+<li class="active"><a href="/"><span class="iconic home"></span>Home</a></li>
+{block:HasPages}
+{block:Pages}
+<li class="page"><a href="{URL}"><span class="iconic bolt"></span>{Label}</a></li>
+{/block:Pages}
+{/block:HasPages}
+<li><a href="/archive"><span class="iconic folder_stroke"></span>Archive</a></li>
+<li><a href="{RSS}"><span class="iconic rss"></span>RSS</a></li>
+{block:AskEnabled}
+<li><a href="/ask"><span class="iconic comment_stroke"></span>Ask</a></li>
+{/block:AskEnabled}
+{block:SubmissionsEnabled}
+<li><a href="/submit"><span class="iconic plus"></span>Submit</a></li>
+{/block:SubmissionsEnabled}
+{block:ifEmail}
+<li><a href="mailto:{text:Email}"><span class="iconic mail"></span>Email</a></li>
+{/block:ifEmail}
+</ul>
+</div>
+<div id="latesttweet">
+<h2>Latest Tweet</h2>
+<div id="twitter"></div>
+</div>
+
+<div id="socialbar"><ul>
+{block:ifTwitter}
+<li><a href="http://www.twitter.com/{text:Twitter}"><span class="socico twitter"></span></a></li>
+{/block:ifTwitter}
+{block:ifFacebook}
+<li><a href="http://www.facebook.com/{text:Facebook}"><span class="socico facebook"></span></a></li>
+{/block:ifFacebook}
+{block:ifDribbble}
+<li><a href="http://www.dribbble.com/{text:Dribbble}"><span class="socico dribbble"></span></a></li>
+{/block:ifDribbble}
+{block:ifFlickr}
+<li><a href="http://www.flickr.com/photos/{text:Flickr}"><span class="socico flickr"></span></a></li>
+{/block:ifFlickr}
+{block:ifYouTube}
+<li><a href="http://www.youtube.com/{text:Youtube}"><span class="socico youtube"></span></a></li>
+{/block:ifYouTube}
+{block:ifSkype}
+<li><a href="skype:{text:Skype}?userinfo"><span class="socico skype"></span></a></li>
+{/block:ifSkype}
+{block:ifDeviantArt}
+<li><a href="http://{text:Deviantart}.deviantart.com"><span class="socico deviantart"></span></a></li>
+{/block:ifDeviantArt}
+{block:ifVimeo}
+<li><a href="http://www.vimeo.com/{text:Vimeo}"><span class="socico vimeo"></span></a></li>
+{/block:ifVimeo}
+{block:ifBehance}
+<li><a href="http://www.behance.net/{text:Behance}"><span class="socico behance"></span></a></li>
+{/block:ifBehance}
+{block:ifGithub}
+<li><a href="http://github.com/{text:Github}"><span class="socico github"></span></a></li>
+{/block:ifGithub}
+<ul></div>
+</div>
+{block:Posts}
+<div class='postcontainer'>
+<div class='post'>
+{block:RebloggedFrom}
+<div class="posticonquote">;</div>
+{/block:RebloggedFrom}
+{block:Answer}      
+<div class="posttext"></div>
+<div class="questioncontainer">
+<div class="asker">{Asker}:</div> 
+<div class="question"> {Question}</div></div>
+<div class="answer">
+{Answer}</div>
+{/block:Answer}   
+{block:Text}
+<div class="posttext"></div>
+<div class='date'>
+<span>{DayOfMonthWithZero}</span> <div class="month">{Month}</div>
+<br />
+</div> <!--date-->
+{block:Title}<a href='{Permalink}'>
+<h3>{Title}</h3>
+</a>
+{/block:Title}
+{Body}
+{block:More}
+<div class="more"> <a href="{Permalink}" class="readmore">Read More</a></div>
+{/block:More}
+{/block:Text}
+<div class="photo-post">
+{block:Photo}
+<div class="photocaption">
+{LinkOpenTag}<img src='{PhotoURL-500}' alt='{PhotoAlt}'/>{LinkCloseTag}
+{block:Caption}
+<p>{Caption}</p>
+{/block:Caption}
+</div>
+{/block:Photo}
+</div>
+
+
+{block:Photoset}
+<div class="photoset">
+{Photoset-500}
+</div>
+<div class="photosetcaption">
+{block:Caption}
+<p>{Caption}</p>
+{/block:Caption}
+</div>
+{/block:Photoset}
+
+
+{block:Quote}
+<div class='date'>
+<span>{DayOfMonthWithZero}</span> <div class="month">{Month}</div>
+<br />
+</div> <!--date-->
+<p class='quote'>{Quote}</p>
+<div class="quotesource">
+{block:Source}
+<p>{Source}</p>
+{/block:Source}
+</div>
+<div class="posticonquote">;</div>
+{/block:Quote}
+{block:Link}
+<div class="linktitle">
+<a href='{URL}' {Target}>{Name}</a></div>
+{block:Description}
+<p>{Description}</p>
+{/block:Description}
+{/block:Link}
+{block:Chat}
+<div class='date'>
+<span>{DayOfMonthWithZero}</span> <div class="month">{Month}</div>
+<br />
+</div> <!--date-->
+<table cellpadding='0' cellspacing='0px' width='100%' border='0' class='chatpost'>
+{block:Lines}
+<tr class='{Alt}'>
+{block:Label}
+<td class='label'>{Label}</td>
+{/block:Label}
+<td class="lines">{Line}</td>
+</tr>
+{/block:Lines}
+</table>
+{/block:Chat}
+{block:Audio}
+<div class="albumcover">
+{block:AlbumArt}
+<img src="{AlbumArtURL}" />
+{/block:AlbumArt}
+</div>
+<div id="trackinfo">
+<div class="artist">
+{block:Artist}
+{Artist}
+{/block:Artist}
+</div><!--artist -->
+<div class="trackname">
+{block:TrackName}
+{TrackName}
+{/block:TrackName}
+</div><!--trackname -->
+<div class='audioplayer'>
+{AudioPlayerWhite}
+</div><!--audioplayer -->
+</div>
+{/block:Audio}
+{block:Video}
+<div class="videos">
+{Video-700}
+</div>
+<div class="videocaption">
+{block:Caption}
+<p>{Caption}</p>
+{/block:Caption}
+</div>
+{/block:Video}
+<div class="postinfo">
+<div class='tags'>
+{block:HasTags}
+{block:Tags}
+<a href='{TagURL}'>#{Tag}</a>
+{/block:Tags}
+{/block:HasTags}
+</div>
+<li class="notes"> <a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+
+{block:IfNotHideCommentCount}
+{block:IfDisqusAccount}
+<div class="comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread"></a></div>
+{/block:IfDisqusAccount}
+{/block:IfNotHideCommentCount}
+</div><!--postinfo-->
+{block:IfDisqusAccount}
+<div class="hidestatic{PostID}">
+{block:PermalinkPage} <div id="disqus_thread"></div>{/block:PermalinkPage}
+</div>
+{/block:IfDisqusAccount}
+{block:IfDisqusAccount}
+<script type="text/javascript">
+var disqus_shortname = '{text:Disqus Account}';
+(function() {
+var dsq = document.createElement('script');
+dsq.type = 'text/javascript';
+dsq.async = true;
+dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = 'http://{text:Disqus Account}.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{/block:IfDisqusAccount}
+</div>
+{block:PostNotes}
+{block:Posts}
+{PostNotes}
+{/block:Posts}
+{/block:PostNotes}
+{/block:Posts}
+<div class='footer'>
+{block:NextPage}
+<a class="left" href='{NextPage}'>Older <span>Posts</span></a>
+{/block:NextPage}
+{block:PreviousPage}
+<a class="right"href='{PreviousPage}'>Newer <span>Posts</span></a>
+{/block:PreviousPage}
+</div>
+</div>
+<br class='clear' />
+</body>
+</html>

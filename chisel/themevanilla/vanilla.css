@@ -1,0 +1,199 @@
+    @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,650,900,900italic);
+    @import url(http://fonts.googleapis.com/css?family=ABeeZee);
+    @import url(http://fonts.googleapis.com/css?family=BenchNine:400,700);
+    sup {
+    font:11px/11px Lato, Helvetica
+    }
+    .credits {
+        font:11px/11px Lato, Helvetica;
+        margin-top:3px
+    }
+    del {
+        color:#aaa;
+    }
+    b , strong, h3 {
+        text-transform:lowercase;
+        font-variant:small-caps;
+        font-size:120%;
+        letter-spacing:1px;
+        font-weight: normal;
+    }
+    a {
+        text-decoration:none;
+        color:#000;
+    }
+    body {
+        color:#000;  
+        /*background-color: #D6DDE5; */
+        background-color: #d5d5d5;
+        height:100%;
+        margin:0;
+        padding:0;
+    }
+    #container {
+        width:640px;
+        margin:0 auto;
+        padding:35px 0;
+    }
+    #header {
+        margin:0 auto;
+        padding: 35px 0;
+        width:500px;
+    }
+    #footer {
+        margin: 0 auto;
+        padding: 0 0 25px 0;
+    }
+    h1, #footer p {
+        text-align:center;
+        font-size: 11px;
+        font-weight:600;
+        font-family:Lato, 'Helvetica Neue', Helvetica, sans-serif;
+        text-transform:uppercase;
+        letter-spacing:2px;
+    }
+    .post p.date {
+        text-align:center;
+        font-size: 11px;
+        font-weight:500;
+        font-family:Lato, 'Helvetica Neue', Helvetica, sans-serif;
+        text-transform:uppercase;
+        letter-spacing:2px;        
+        color:#000;
+        margin-bottom:0px;
+    }
+    h1 span, #footer p {
+        font-weight:400;
+    }
+    .post h2 {
+        font-family: BenchNine,Sans-serif;
+        font-size:39px;
+        font-weight:500;
+        text-transform:uppercase;
+        text-align:center;
+        color:#3a3435;
+        margin:0 70px;
+    }
+    .post {
+        margin:0 0 50px 0;
+        padding: 35px 0;
+        width:640px;
+        background-color:#fff;
+    }
+    .post p, .post ul, .post ol, .post pre, .post h3, .post > .date, .post blockquote {
+        margin:25px 70px;
+        font-family:ABeeZee, 'Helvetica Neue', Helvetica;
+    }
+    .post img {
+        min-width:640px;
+        max-width:640px;
+        display: block;
+        margin:25px -70px;
+    }
+    .post img.screen {
+        margin:0;
+        min-width: 500px;
+        max-width: 500px;
+        /*
+        border:0px transparent solid;
+        -webkit-box-shadow:rgba(0,0,0,0.5) 0px 1px 3px;
+        -khtml-box-shadow:rgba(0,0,0,0.5) 0px 1px 3px;
+        box-shadow:rgba(0,0,0,0.5) 0px 1px 3px;
+        -moz-border-radius:3px;
+        -o-border-radius:3px;
+        -webkit-border-radius:3px;
+        border-radius:3px;
+        */
+        border:1px #bbb solid;
+    }
+    .post pre {
+        background-color:#eee;
+        font:normal 12px monospace;
+        overflow:auto;
+        border-radius:3px;
+        padding:10px;
+    }
+    .post p code {
+        vertical-align:middle;
+        background-color:#eee;
+        font:normal 12px monospace;
+        border-radius:2px;
+        overflow:auto;
+        padding:3px;
+    }
+    .post p,.post li,.post blockquote {
+        font-size:15px;
+        line-height:24px
+    }
+    .post li {margin-bottom:6px;}
+    .post a {
+        font-weight:400;
+        /* color:#00f; */
+        border-bottom: 1px #bbb solid;
+    }
+    .post a:hover {
+        border-bottom: 1px #090 solid;
+    }
+    .post blockquote {
+        border-left:1px solid #ccc;
+    }
+    .post blockquote p {
+        margin: 0 20px;
+    }
+    hr,.footnote hr {
+        width:210px;
+        border-color:#ccc;
+        border-style:solid;
+        border-width:1px 0 0;
+    }
+    hr {
+        margin:20px auto;
+        }
+    .footnote hr {
+        margin:20px 0 0 70px;
+        }
+    .footnote, small {
+        font:12.5px/18px ABeeZee,Geneva,'Lucida Grande',sans-serif;
+        }
+    .footnote code {
+        font-size:11.5px;
+        }
+    .footnote li {
+        margin-bottom:9px;
+    }
+    .footnote ol li, .footnote p {
+        font-size:13px!important;
+        line-height: 150%;
+    }
+    .footnote ol li > p, .post ol li > p {
+        margin:0;
+        padding:0;
+    }
+    .post ol li > pre {
+        margin:10px 0;
+        padding:10px;
+    }
+    p.list {
+        line-height: 100%;
+    }
+    .post h2 a {
+        text-decoration:none;
+        color:#000;
+        font-weight:500;
+        border: 0;
+    }
+    .post h2 a:hover {
+        border:0;
+    }
+    .navleft {
+        text-align:left;
+        font-size: 11px;
+        font-weight:600;
+        font-family:Lato, 'Helvetica Neue', Helvetica, sans-serif;
+        text-transform:uppercase;
+        letter-spacing:2px;
+        margin: -15px 0 35px 0;
+    }
+    .post h3 {
+        margin-bottom:-12px;
+    }    
